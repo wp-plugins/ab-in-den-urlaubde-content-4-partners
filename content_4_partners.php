@@ -4,11 +4,11 @@
  Plugin URI: http://content-partner.ab-in-den-urlaub.de
  Description: Hotelbewertungen und Angebote von ab-in-den-urlaub.de für Ihren Blog. <strong>Bei Aktivierung dieses Plugins wird automatisch eine Seite mit Hotelbewertungen und Angeboten generiert.</strong>
  Author: ab-in-den-urlaub
- Version: 1.1
+ Version: 1.2
  */
 
 // default settings
-define('CONTENT_4_PARTNERS_VERSION', '1.1');
+define('CONTENT_4_PARTNERS_VERSION', '1.2');
 define('CONTENT_4_PARTNERS_HOST', 'webservice.ab-in-den-urlaub.de');
 define('CONTENT_4_PARTNERS_PORT', '80');
 define('CONTENT_4_PARTNERS_DIR', '');
@@ -70,6 +70,18 @@ class Content4Partners
         remove_filter('the_content', 'wpautop');
 		add_filter('the_content', array(&$this, 'wpautopnobr'));
 
+		// to manipulate the behavior of the wpseo-plugin
+		// user can decide if he wants the wpseo to manipulate the title as well
+        if(1 == get_post_meta($this->getPageId(), '_wpseo_edit_only', true)){
+            $optionsseo = get_option('wpseo_options');
+            // if there are no wpseo_options the wpseo-plugin may not installed
+            if(false === $optionsseo){
+                update_post_meta($this->getPageId(), '_wpseo_edit_title', trim($this->getTitleForId($this->getRegionId())) . ' | ' . get_bloginfo());
+            }
+            else{
+                update_post_meta($this->getPageId(), '_wpseo_edit_title', trim($this->getTitleForId($this->getRegionId())) . ' ' . $optionsseo['wp_seo_title_separator'] . ' ' . get_bloginfo());
+            }
+        }
     }
 
     /**
@@ -886,6 +898,7 @@ class Content4Partners
             }
 
             update_option(CONTENT_4_PARTNERS_SETTINGS, $options);
+            update_post_meta($pageId, '_wpseo_edit_only', '1');
         }
 
         return $pageId;
@@ -907,6 +920,7 @@ class Content4Partners
         $options = $this->getOptions();
         $options['page_id'] = -1;
         update_option(CONTENT_4_PARTNERS_SETTINGS, $options);
+        delete_post_meta($pageId, '_wpseo_edit_only', '1');
 
         // set options to null, next request will fetch current options from db
         $this->invalidateOptions();

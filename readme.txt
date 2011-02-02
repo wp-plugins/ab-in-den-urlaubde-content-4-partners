@@ -1,13 +1,13 @@
 === ab-in-den-urlaub.de Content 4 Partners ===
 Contributors: ab-in-den-urlaub
 Donate link: http://content-partner.ab-in-den-urlaub.de
-Tags: hotels, seo, affiliate, reviews, Booking, "hotel search", hostels, Reservation, rooms 
+Tags: hotels, seo, affiliate, reviews, Booking, "hotel search", hostels, Reservation, rooms, "Ab in den Urlaub", ab-in-den-urlaub
 Requires at least: 2.8
 Tested up to: 3.0.4
 License: GPLv2
-Stable tag: 1.1
+Stable tag: 1.2
 
-Ab-in-de-urlaub.de stellt Ihnen optimierte Seiten zu Ihrer Destination mit Hotelbewertungen und -angeboten bereit.
+Ab-in-den-urlaub.de stellt Ihnen optimierte Seiten zu Ihrer Destination mit Hotelbewertungen und -angeboten bereit.
 
 == Description ==
 
@@ -15,7 +15,7 @@ Ab-in-den-urlaub.de stellt ihnen einen Satz Seiten zur Verfuegung. Diese Seiten 
 enthalten einen uniquen Satz von Hotelbewertungen und -angeboten.
 
 Zur Nutzung des Plugins benoetigen Sie einen Account bei content-partner.ab-in-den-urlaub.de. Sie koennen sich 
-in der Einstellungsseite des Plugins registrieren. Für die Teilnahme am Affiliate-Programm benötigen Sie
+in der Einstellungsseite des Plugins registrieren. FÃ¼r die Teilnahme am Affiliate-Programm benÃ¶tigen Sie
 einen Zanox-Account.
 Hinweis: Merken Sie sich bitte Login und Passwort vom Registrieren. Passwoerter werden bei ab-in-den-urlaub.de
 nur verschluesselt abgelegt, es ist nicht reproduzierbar. Fuer den Fall, dass Sie Ihr Passwort vergessen haben,
@@ -33,7 +33,7 @@ koennen Sie sich auf http://content-partner.ab-in-den-urlaub.de ein neues Passwo
 7. Wir empfehlen Ihnen, den Cache zu aktivieren.
 8. Wenn Sie am Affiliate-Programm teilnehmen wollen, tragen Sie bitte 
    auf http://content-partner.ab-in-den-urlaub.de/seiten Ihre Zanox-PID ein.
-9. Auf http://content-partner.ab-in-den-urlaub.de/seiten können Sie für jede der Seiten einen eigenen Text 
+9. Auf http://content-partner.ab-in-den-urlaub.de/seiten kÃ¶nnen Sie fÃ¼r jede der Seiten einen eigenen Text 
    hinterlegen, der dann in Ihrem Blog mit angezeigt wird.
 
 == Registrierung ==
@@ -43,42 +43,27 @@ ein. Wir werden Ihre Registrierung pruefen und Sie erhalten von uns eine E-Mail 
 Tragen Sie diese Daten auf der Einstellungsseite des Plugins ein. 
 Jetzt sollte die Seite in Ihrem Blog erscheinen.
 
+== Upgrade Notice ==
+
+= 1.2 =
+wpSeo-UnterstÃ¼tzung: mit wpSeo lÃ¤sst sich das Verhalten des Content-4-Partners-Plugins steuern.
+Weitere Informationen finden Sie auf http://content-partner.ab-in-den-urlaub.de/download/wpSeo.pdf .
+
+= 1.1 =
+Mit diesem Update wird die Zusammenarbeit mit anderen SEO-Plugins verbessert. Spezielle Features fÃ¼r wpSeo
+kommen im nÃ¤chsten Upgrade.
+
+= 1.0 =
+Nehmen Sie am Affiliate-programm von Ab-in-den-Urlaub.de teil.
+
 == Changelog ==
+= 1.2 =
+* UnterstÃ¼tzung fÃ¼r wpSeo
+
 = 1.1 =
 * getestet mit Wordpress 3.0.4
 * Seitentitel kommt trotz Funktionen anderer Plugins
 
 = 1.0 = 
 * Sicherheitsanpassungen
-
-= 0.3 =
-* Bug behoben: beim Speichern der Seite wird jedesmal ein Update-Port gespeichert, was die WP-Datenbank unnötig aufbläht
-    -> es wird jetzt nur noch gespeichert, wenn es nötig ist 
-* Registrieren nur noch über http://content-partner.ab-in-den-urlaub.de/
-
-= 0.2 =
-* Affiliate - Programm (via Zanox) integriert
-* Die neue Seite wird vom Plugin erst erzeugt, wenn die eingegebenen Logindaten korrekt sind.
-
-= 0.1.7 =
-* Titel wird nur für die selbst erzeugte Seite verändert
-* Permalinks deaktiviert
-
-= 0.1.6 =
-* Behandlung der Permalinks geändert
-
-= 0.1.5 =
-* Plugin-Einstellungen: überflüssige Leerzeichen werden aus eingegebenen Daten entfernt
-* Seitenverwaltung: Verbesserung der Seitenerzeugung beim Speichern der Einstellungen
-
-= 0.1.4 =
-* bugfix: Registrierung ohne Cache 
-
-= 0.1.3 =
-* Paginations-Seiten ab Seite 2 sind "noindex, follow"
-* bugfix: Seitentitel enthaelt jetzt Destinationsnamen und Seitennummer
-
-= 0.1.2 =
-* Abwaertskompatibilitaet bis WordPress Version 2.8
-* bugfix: service bugs
-* bugfix: permalinks bugs
+* initial
