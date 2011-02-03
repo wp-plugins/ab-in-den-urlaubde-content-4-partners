@@ -354,7 +354,7 @@ class Content4Partners
     		return false;
     	} else{
             $get = CONTENT_4_PARTNERS_DIR . '/xml.php?namespace=' . $options['namespace']
-                . '&action=' . $action . '&param[]=' . $login . '&param[]=' . $password;
+                . '&action=' . $action . '&param[]=' . $login . '&param[]=' . $password . '&NoCache=1';
             fwrite($fp, "GET " . $get . " HTTP/1.0\r\nHost: " . CONTENT_4_PARTNERS_HOST . "\r\nAccept: */*\r\n\r\n");
 
             $started = false;
