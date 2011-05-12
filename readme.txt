@@ -3,9 +3,9 @@ Contributors: ab-in-den-urlaub
 Donate link: http://content-partner.ab-in-den-urlaub.de
 Tags: hotels, seo, affiliate, reviews, Booking, "hotel search", hostels, Reservation, rooms, "Ab in den Urlaub", ab-in-den-urlaub
 Requires at least: 2.8
-Tested up to: 3.0.4
+Tested up to: 3.1.1
 License: GPLv2
-Stable tag: 1.2
+Stable tag: 1.3
 
 Ab-in-den-urlaub.de stellt Ihnen optimierte Seiten zu Ihrer Destination mit Hotelbewertungen und -angeboten bereit.
 
@@ -30,11 +30,11 @@ koennen Sie sich auf http://content-partner.ab-in-den-urlaub.de ein neues Passwo
    Merken Sie sich bitte Ihr Login und Passwort.
 5. Sie bekommen von ab-in-de-urlaub.de eine E-Mail mit Ihren Daten. 
 6. Tragen Sie diese in die entsprechenden Felder auf der Einstellungsseite ein.
-7. Wir empfehlen Ihnen, den Cache zu aktivieren.
-8. Wenn Sie am Affiliate-Programm teilnehmen wollen, tragen Sie bitte 
+7. Wenn Sie am Affiliate-Programm teilnehmen wollen, tragen Sie bitte 
    auf http://content-partner.ab-in-den-urlaub.de/seiten Ihre Zanox-PID ein.
-9. Auf http://content-partner.ab-in-den-urlaub.de/seiten können Sie für jede der Seiten einen eigenen Text 
-   hinterlegen, der dann in Ihrem Blog mit angezeigt wird.
+8. Auf http://content-partner.ab-in-den-urlaub.de/seiten können Sie für jede der Seiten einen eigenen Text 
+   hinterlegen, der dann in Ihrem Blog mit angezeigt wird. Außerdem können Sie hier auswählen, ob für Ihre
+   Region Permalinks verwendet werden sollen. 
 
 == Registrierung ==
 
@@ -44,6 +44,12 @@ Tragen Sie diese Daten auf der Einstellungsseite des Plugins ein.
 Jetzt sollte die Seite in Ihrem Blog erscheinen.
 
 == Upgrade Notice ==
+
+= 1.3 =
+Permalinks für die Content-4-Partners-Seiten können verwendet werden. Dazu ist eine zusätzliche Einstellung 
+für die Region notwendig.
+Bugs bei fehlgeschlagenem Login und beim Zusammenspiel mit anderen Plugins wurden behoben. 
+Getestet mit Wordpress 3.1.1.
 
 = 1.2 =
 wpSeo-Unterstützung: mit wpSeo lässt sich das Verhalten des Content-4-Partners-Plugins steuern.
