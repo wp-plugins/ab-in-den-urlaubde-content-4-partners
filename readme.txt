@@ -3,7 +3,7 @@ Contributors: ab-in-den-urlaub
 Donate link: http://content-partner.ab-in-den-urlaub.de
 Tags: hotels, seo, affiliate, reviews, Booking, "hotel search", hostels, Reservation, rooms, "Ab in den Urlaub", ab-in-den-urlaub
 Requires at least: 2.8
-Tested up to: 3.1.1
+Tested up to: 3.1.3
 License: GPLv2
 Stable tag: 1.3
 
@@ -44,6 +44,9 @@ Tragen Sie diese Daten auf der Einstellungsseite des Plugins ein.
 Jetzt sollte die Seite in Ihrem Blog erscheinen.
 
 == Upgrade Notice ==
+= 1.4 =
+Bugfix: Probleme mit Zeilenumbrüchen behoben
+Test mit Wordpress 3.1.3
 
 = 1.3 =
 Permalinks für die Content-4-Partners-Seiten können verwendet werden. Dazu ist eine zusätzliche Einstellung 
