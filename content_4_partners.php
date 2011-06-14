@@ -4,11 +4,11 @@
  Plugin URI: http://content-partner.ab-in-den-urlaub.de
  Description: Hotelbewertungen und Angebote von ab-in-den-urlaub.de für Ihren Blog. <strong>Bei Aktivierung dieses Plugins wird automatisch eine Seite mit Hotelbewertungen und Angeboten generiert.</strong>
  Author: ab-in-den-urlaub
- Version: 1.3
+ Version: 1.4
  */
 
 // default settings
-define('CONTENT_4_PARTNERS_VERSION', '1.3');
+define('CONTENT_4_PARTNERS_VERSION', '1.4');
 define('CONTENT_4_PARTNERS_HOST', 'webservice.ab-in-den-urlaub.de');
 define('CONTENT_4_PARTNERS_PORT', '80');
 define('CONTENT_4_PARTNERS_DIR', '');
@@ -73,9 +73,6 @@ class Content4Partners
         // register title hook
         add_filter('wp_title', array(&$this, 'hookWpTitle'), 99);
 
-        remove_filter('the_content', 'wpautop');
-        add_filter('the_content', array(&$this, 'wpautopnobr'), 99);
-
         // to manipulate the behavior of the wpseo-plugin
         // user can decide if he wants the wpseo to manipulate the title as well
         if (1 == get_post_meta($this->getPageId(), '_wpseo_edit_only', true)) {
@@ -102,14 +99,16 @@ class Content4Partners
         // remove p-Tags
         $offsetBegin = strpos($result, CONTENT_4_PARTNERS_BEGINTAG);
         $offsetEnd = strpos($result, CONTENT_4_PARTNERS_ENDTAG);
-        $length = $offsetEnd - $offsetBegin + strlen(CONTENT_4_PARTNERS_ENDTAG);
-        if ($length > 0) {
-            $c4pContentOriginal = substr($result, $offsetBegin, $length);
-            $c4pContent = substr($result, $offsetBegin, $length);
-            $c4pContent = str_replace('<p>', '', $c4pContent);
-            $c4pContent = str_replace('</p>', '', $c4pContent);
+        if($offsetBegin !== false && $offsetEnd !== false){
+            $length = $offsetEnd - $offsetBegin + strlen(CONTENT_4_PARTNERS_ENDTAG);
+            if ($length > 0) {
+                $c4pContentOriginal = substr($result, $offsetBegin, $length);
+                $c4pContent = substr($result, $offsetBegin, $length);
+                $c4pContent = str_replace('<p>', '', $c4pContent);
+                $c4pContent = str_replace('</p>', '', $c4pContent);
 
-            $result = str_replace($c4pContentOriginal, $c4pContent, $result);
+                $result = str_replace($c4pContentOriginal, $c4pContent, $result);
+            }
         }
 
         return $result;
@@ -124,6 +123,10 @@ class Content4Partners
      */
     function shortCodeContent4Partners($attributes, $content = null)
     {
+        // aktiviere unseren eigenen Filter
+        remove_filter('the_content', 'wpautop');
+        add_filter('the_content', array(&$this, 'wpautopnobr'), 99);
+
         $id = $this->getRegionId($attributes);
 
         // check again
