@@ -42,7 +42,6 @@ define('CONTENT_4_PARTNERS_CACHE_KEY_PREFIX', 'content_4_partners_');
 
 // helper for finding this plugin when links are added to plugin actions
 static $content4partners_plugin;
-
 /**
  * Content 4 Partners Plugin.
  */
@@ -89,8 +88,8 @@ class Content4Partners
     }
 
     /**
-     * do not insert <br />-Tags
-     * @param unknown_type $content
+     * do not insert <br />-Tags, remove <p>-Tags
+     * @param string $content
      */
     function wpautopnobr($content)
     {
@@ -168,7 +167,6 @@ class Content4Partners
         if (empty($content)) {
             $content = "Fehler beim Abrufen der Daten !";
         }
-
         return $content;
     }
 
