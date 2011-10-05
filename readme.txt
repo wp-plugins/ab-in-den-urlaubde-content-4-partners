@@ -5,7 +5,7 @@ Tags: hotels, seo, affiliate, reviews, Booking, "hotel search", hostels, Reserva
 Requires at least: 2.8
 Tested up to: 3.2.1
 License: GPLv2
-Stable tag: 1.4
+Stable tag: 1.5
 
 Ab-in-den-urlaub.de stellt Ihnen optimierte Seiten zu Ihrer Destination mit Hotelbewertungen und -angeboten bereit.
 
@@ -44,6 +44,9 @@ Tragen Sie diese Daten auf der Einstellungsseite des Plugins ein.
 Jetzt sollte die Seite in Ihrem Blog erscheinen.
 
 == Upgrade Notice ==
+= 1.5 =
+Bugfix: Kompatibilität mit WP 2.8 wieder hergestellt
+
 = 1.4 =
 Bugfix: Probleme mit Zeilenumbrüchen behoben
 Test mit Wordpress 3.2.1
@@ -68,6 +71,17 @@ kommen im nächsten Upgrade.
 Nehmen Sie am Affiliate-programm von Ab-in-den-Urlaub.de teil.
 
 == Changelog ==
+= 1.5 = 
+* WP 3 - spezifische Funktionen entfernt
+
+= 1.4 =
+* Test WP 3.2 und 3.2.1
+* Bugfix bei Zeilenumbrüchen
+
+= 1.3 =
+* Unterstützung für Permalinks
+* Test mit WP 3.1.1
+
 = 1.2 =
 * Unterstützung für wpSeo
 

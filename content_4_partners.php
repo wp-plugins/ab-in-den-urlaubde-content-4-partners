@@ -603,7 +603,7 @@ class Content4Partners
         if (!array_key_exists('permalink', $options)) {
             $page = get_page_by_title(get_the_title($pageId));
             if (!is_null($page)) {
-                $options['permalink'] = urlencode(get_site_url() . '/' . $page->post_name);
+                $options['permalink'] = urlencode(site_url() . '/' . $page->post_name);
                 update_option(CONTENT_4_PARTNERS_SETTINGS, $options);
             }
         }
@@ -757,7 +757,7 @@ class Content4Partners
                             wp_update_post($page);
                         }
                         // permalink
-                        $validatedOptions['permalink'] = urlencode(get_site_url() . '/' . $page->post_name);
+                        $validatedOptions['permalink'] = urlencode(site_url() . '/' . $page->post_name);
                     }
                 }
 
@@ -790,7 +790,7 @@ class Content4Partners
                     }
                 }
 
-                $validatedOptions['permalink'] = urlencode(get_site_url() . '/' . $page->post_name);
+                $validatedOptions['permalink'] = urlencode(site_url() . '/' . $page->post_name);
                 update_option(CONTENT_4_PARTNERS_SETTINGS, $validatedOptions);
 
                 $this->invalidateOptions();
@@ -817,7 +817,7 @@ class Content4Partners
         <div class="icon32" id="icon-plugins"></div>
         <h2>Content 4 Partners Options</h2>
             <?php
-        $image_aidu_url = get_site_url("wpurl") . '/wp-content/plugins/ab-in-den-urlaubde-content-4-partners/images/logo.png';
+        $image_aidu_url = plugins_url() . '/ab-in-den-urlaubde-content-4-partners/images/logo.png';
 ?>
             <form method="post" action="">
                 <?php $options = $this->getOptions(); ?>
@@ -1022,7 +1022,7 @@ class Content4Partners
             $newPage = get_page_by_title(get_the_title($pageId));
             if (!is_null($newPage)) {
                 $page['post_name'] = $newPage->post_name;
-                $options['permalink'] = urlencode(get_site_url() . $newPage->post_name);
+                $options['permalink'] = urlencode(site_url() . $newPage->post_name);
             }
 
             update_option(CONTENT_4_PARTNERS_SETTINGS, $options);
