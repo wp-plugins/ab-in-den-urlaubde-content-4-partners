@@ -4,11 +4,11 @@
  Plugin URI: http://content-partner.ab-in-den-urlaub.de
  Description: Hotelbewertungen und Angebote von ab-in-den-urlaub.de für Ihren Blog. <strong>Bei Aktivierung dieses Plugins wird automatisch eine Seite mit Hotelbewertungen und Angeboten generiert.</strong>
  Author: ab-in-den-urlaub
- Version: 1.4
+ Version: 1.6
  */
 
 // default settings
-define('CONTENT_4_PARTNERS_VERSION', '1.4');
+define('CONTENT_4_PARTNERS_VERSION', '1.6');
 define('CONTENT_4_PARTNERS_HOST', 'webservice.ab-in-den-urlaub.de');
 define('CONTENT_4_PARTNERS_PORT', '80');
 define('CONTENT_4_PARTNERS_DIR', '');
@@ -549,6 +549,7 @@ class Content4Partners
         }
 
         $input['permalink_use'] = (isset($input['permalink_use']) ? $input['permalink_use'] : CONTENT_4_PARTNERS_PERMALINKS_USE);
+        $input['cache_use'] = (isset($input['cache_use']) ? $input['cache_use'] : '0');
 
         return $input;
     }
