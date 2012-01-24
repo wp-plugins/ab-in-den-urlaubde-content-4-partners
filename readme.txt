@@ -3,9 +3,9 @@ Contributors: ab-in-den-urlaub
 Donate link: http://content-partner.ab-in-den-urlaub.de
 Tags: hotels, seo, affiliate, reviews, Booking, "hotel search", hostels, Reservation, rooms, "Ab in den Urlaub", ab-in-den-urlaub
 Requires at least: 2.8
-Tested up to: 3.2.1
+Tested up to: 3.3.1
 License: GPLv2
-Stable tag: 1.6
+Stable tag: 1.7
 
 Ab-in-den-urlaub.de stellt Ihnen optimierte Seiten zu Ihrer Destination mit Hotelbewertungen und -angeboten bereit.
 
@@ -44,6 +44,10 @@ Tragen Sie diese Daten auf der Einstellungsseite des Plugins ein.
 Jetzt sollte die Seite in Ihrem Blog erscheinen.
 
 == Upgrade Notice ==
+= 1.7 =
+Seitentitel beachtet Einstellungen des Themes
+  ..:: Danke an Felix Kern von www.studium-ausland.eu/ ::..
+
 = 1.6 =
 Bugfix: Cacheeinstellung
 

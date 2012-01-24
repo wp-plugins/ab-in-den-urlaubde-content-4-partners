@@ -4,11 +4,11 @@
  Plugin URI: http://content-partner.ab-in-den-urlaub.de
  Description: Hotelbewertungen und Angebote von ab-in-den-urlaub.de für Ihren Blog. <strong>Bei Aktivierung dieses Plugins wird automatisch eine Seite mit Hotelbewertungen und Angeboten generiert.</strong>
  Author: ab-in-den-urlaub
- Version: 1.6
+ Version: 1.7
  */
 
 // default settings
-define('CONTENT_4_PARTNERS_VERSION', '1.6');
+define('CONTENT_4_PARTNERS_VERSION', '1.7');
 define('CONTENT_4_PARTNERS_HOST', 'webservice.ab-in-den-urlaub.de');
 define('CONTENT_4_PARTNERS_PORT', '80');
 define('CONTENT_4_PARTNERS_DIR', '');
@@ -70,7 +70,7 @@ class Content4Partners
         add_filter('plugin_action_links', array(&$this, 'hookAddPluginAction'), 10, 2);
 
         // register title hook
-        add_filter('wp_title', array(&$this, 'hookWpTitle'), 99);
+        add_filter('wp_title', array(&$this, 'hookWpTitle'), 99, 3);
 
         // to manipulate the behavior of the wpseo-plugin
         // user can decide if he wants the wpseo to manipulate the title as well
@@ -682,7 +682,7 @@ class Content4Partners
      * @param $title    title before
      * @return  modified title
      */
-    function hookWpTitle($title)
+    function hookWpTitle($title, $sep, $seplocation)
     {
         $pageId = -1; // init
         $options = $this->getOptions();
@@ -699,7 +699,10 @@ class Content4Partners
 
                 if (!is_null($regionId)) {
                     $newTitle = $this->getTitleForId($regionId);
-                    return $newTitle . " | ";
+                    if (!empty($sep)) {
+                        return 'right' == $seplocation ? $newTitle . ' ' . $sep . ' ' : ' ' . $sep . ' '  . $newTitle;
+                    }
+                    return $newTitle;
                 }
             }
         }
